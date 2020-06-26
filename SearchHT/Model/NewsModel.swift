@@ -9,6 +9,7 @@
 import UIKit
 
 struct NewsModel {
+    
     let newsTitle: String
     let newsText: String
     

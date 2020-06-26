@@ -31,6 +31,7 @@ class NewsCell: UITableViewCell {
     
     private func setup() {
         cellTitle.numberOfLines = 2
+        cellTitle.font = cellTitle.font.withSize(20)
         cellText.numberOfLines = 3
         
         self.addSubview(cellTitle)

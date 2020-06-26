@@ -27,8 +27,9 @@ class DetailedController: BaseViewController {
     }
     
     private func setup() {
-        scrollView.contentSize = UIScreen.main.bounds.size
+        
         controllerTitle.numberOfLines = 0
+        controllerTitle.font = controllerTitle.font.withSize(25)
         controllerText.numberOfLines = 0
         
         self.view.addSubview(scrollView)
@@ -37,17 +38,18 @@ class DetailedController: BaseViewController {
         
         scrollView.snp.makeConstraints { maker in
             maker.edges.equalToSuperview()
-            maker.centerX.equalTo(self.view.snp.centerX)
         }
         
         controllerTitle.snp.makeConstraints { maker in
             maker.top.equalTo(scrollView.snp.top).inset(10)
+            maker.width.equalTo(UIScreen.main.bounds.width - 20)
             maker.left.equalTo(scrollView.snp.left).inset(10)
             maker.right.lessThanOrEqualTo(scrollView.snp.right).inset(10)
         }
         
         controllerText.snp.makeConstraints { maker in
             maker.top.equalTo(controllerTitle.snp.bottom).offset(10)
+            maker.width.equalTo(UIScreen.main.bounds.width - 20)
             maker.left.equalTo(scrollView.snp.left).inset(10)
             maker.right.lessThanOrEqualTo(scrollView.snp.right).inset(10)
             maker.bottom.equalTo(scrollView.snp.bottom).inset(10)
