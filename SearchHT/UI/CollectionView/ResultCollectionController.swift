@@ -27,8 +27,6 @@ class ResultCollectionController: BaseViewController, UICollectionViewDataSource
             maker.left.equalToSuperview()
             maker.right.equalToSuperview()
             maker.bottom.equalToSuperview()
-            
-            
         }
         
         collectionView.delegate = self
@@ -66,8 +64,6 @@ class ResultCollectionController: BaseViewController, UICollectionViewDataSource
             maker.right.equalToSuperview()
             maker.bottom.equalToSuperview()
         }
-        
-        view.layoutIfNeeded()
         return
       }
 
@@ -87,7 +83,6 @@ class ResultCollectionController: BaseViewController, UICollectionViewDataSource
             maker.right.equalToSuperview()
             maker.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(keyboardHeight)
         }
-        self.view.layoutIfNeeded()
       })
     }
 
