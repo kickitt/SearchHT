@@ -42,7 +42,6 @@ class NewsListController: BaseViewController, UITableViewDataSource, UITableView
         } else {
             tableView.tableHeaderView = searchController?.searchBar
         }
-        
     }
     
     private func didSelectItem(_ item: NewsModel) {
@@ -69,7 +68,6 @@ class NewsListController: BaseViewController, UITableViewDataSource, UITableView
     //MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        //push detailedController
         didSelectItem(dataSource[indexPath.row])
     }
     
