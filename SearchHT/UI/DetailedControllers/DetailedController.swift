@@ -13,13 +13,7 @@ class DetailedController: BaseViewController {
     let scrollView = UIScrollView()
     var controllerTitle = UILabel()
     var controllerText = UILabel()
-    
-    var model: NewsModel? {
-        didSet {
-            controllerTitle.text = model?.newsTitle
-            controllerText.text = model?.newsText
-        }
-    }
+    var model: NewsModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,18 +35,17 @@ class DetailedController: BaseViewController {
         }
         
         controllerTitle.snp.makeConstraints { maker in
-            maker.top.equalTo(scrollView.snp.top).inset(10)
-            maker.width.equalTo(UIScreen.main.bounds.width - 20)
-            maker.left.equalTo(scrollView.snp.left).inset(10)
-            maker.right.lessThanOrEqualTo(scrollView.snp.right).inset(10)
+            
+            maker.top.left.right.equalToSuperview().inset(10)
+            maker.centerX.equalToSuperview()
         }
         
         controllerText.snp.makeConstraints { maker in
-            maker.top.equalTo(controllerTitle.snp.bottom).offset(10)
-            maker.width.equalTo(UIScreen.main.bounds.width - 20)
-            maker.left.equalTo(scrollView.snp.left).inset(10)
-            maker.right.lessThanOrEqualTo(scrollView.snp.right).inset(10)
-            maker.bottom.equalTo(scrollView.snp.bottom).inset(10)
+            maker.top.equalTo(controllerTitle.snp.bottom).offset(10).labeled("BEACH")
+            maker.left.right.bottom.equalToSuperview().inset(10)
+            
         }
+        controllerTitle.text = model?.newsTitle
+        controllerText.text = model?.newsText
     }
 }
